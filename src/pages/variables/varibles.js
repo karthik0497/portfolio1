@@ -18,39 +18,40 @@ export const titles = [
 export const intro ="Karthik"
 export const greet = "Hi,I'm"
 
-export const skills = `class Profile:
-    def __init__(self):
-      self.name = "Karthik"
-      self.adaptable = True
-      self.frequent_upgrade = True
+export const skills = 
+     `class Profile:
+      def __init__(self):
+        self.name = "Karthik"
+        self.adaptable = True
+        self.frequent_upgrade = True
 
-      self.skills = {
-      "Client-side": [
+        self.skills = {
+          "Client-side": [
           "HTML5", "CSS3", 
           "JavaScript (Basic)",
           "Bootstrap"
       ],
-      "Server-side & Programming": [
+        "Server-side & Programming": [
           "Python", "FastAPI", 
           "Django (Basic)", "Pandas",
           "PostgreSQL", "API Integration", 
           "API Gateway",
           "Blockchain (Basics)"
       ],
-      "Robotics & IoT": [
+        "Robotics & IoT": [
           "Robotics Testing", 
           "PLC", "Modbus", "Arduino",
           "IoT", "ASRS", "SCARA", 
           "Automation"
       ],
-      "DevOps & Backend Infrastructure": [
+        "DevOps & Backend Infrastructure": [
           "Microservices", "EC2", "RDS",
           "RabbitMQ", "MQTT",
           "Cloud Deployment", 
           "Backend Development", 
           "System Monitoring"
       ],
-      "Operating Systems": [
+        "Operating Systems": [
           "Linux", "Windows", "MacOS"
       ]
   }`;
