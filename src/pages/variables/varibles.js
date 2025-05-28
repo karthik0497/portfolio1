@@ -19,8 +19,8 @@ export const intro ="Karthik"
 export const greet = "Hi,I'm"
 
 export const skills = 
-     `class Profile:
-      def __init__(self):
+`class Profile:
+     def __init__(self):
         self.name = "Karthik"
         self.adaptable = True
         self.frequent_upgrade = True
