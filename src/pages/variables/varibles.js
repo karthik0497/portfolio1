@@ -25,13 +25,13 @@ export const skills =
     self.adaptable = True
     self.frequent_upgrade = True
     self.skills = {
-        "Client-side": ["HTML5", "CSS3", 
-      "JavaScript (Basic)", "Bootstrap"],
+    "Client-side": ["HTML5", "CSS3", 
+    "JavaScript (Basic)", "Bootstrap"],
       
-      "Server-side & Programming": ["Python", "FastAPI", 
-      "Django (Basic)", "Pandas", "PostgreSQL",
-        "API Integration", "API Gateway", 
-        "Blockchain (Basics)"],
+    "Server-side & Programming": ["Python", "FastAPI", 
+    "Django (Basic)", "Pandas", "PostgreSQL",
+    "API Integration", "API Gateway", 
+    "Blockchain (Basics)"],
 
     "Robotics & IoT": ["Robotics Testing", "PLC", 
     "Modbus", "Arduino", "IoT", 
