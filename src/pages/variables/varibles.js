@@ -83,7 +83,7 @@ def __init__(self):
         "SCARA",
         "Robots Automation"
     ],
-  "DevOps & Backend Infrastructure": 
+  "DevOps & Backend Infra": 
     [
         "Microservices",
         "EC2",
