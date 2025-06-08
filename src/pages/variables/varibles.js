@@ -54,13 +54,15 @@ def __init__(self):
     self.adaptable = True
     self.frequent_upgrade = True
     self.skills = {
-    "Client-side": [
+    "Client-side": 
+    [
         "HTML5",
         "CSS3",
         "JavaScript (Basic)",
         "Bootstrap"
     ],
-    "Server-side & Programming": [
+    "Server-side & Programming": 
+    [
         "Python",
         "FastAPI",
         "Django (Basic)",
@@ -70,7 +72,8 @@ def __init__(self):
         "API Gateway",
         "Blockchain (Basics)"
     ],
-    "Robotics & IoT": [
+    "Robotics & IoT": 
+    [
         "Robotics Testing",
         "PLC",
         "Modbus",
@@ -80,7 +83,8 @@ def __init__(self):
         "SCARA",
         "Robots Automation"
     ],
-    "DevOps & Backend Infrastructure": [
+    "DevOps & Backend Infrastructure": 
+    [
         "Microservices",
         "EC2",
         "RDS",
@@ -90,7 +94,8 @@ def __init__(self):
         "Backend Development",
         "System Monitoring"
     ],
-    "Operating Systems": [
+    "Operating Systems": 
+    [
         "Linux",
         "Windows",
         "MacOS"
