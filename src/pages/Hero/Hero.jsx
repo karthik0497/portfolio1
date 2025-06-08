@@ -187,9 +187,7 @@ export default function Hero() {
             </div>
 
             {/* Right column - Code window */}
-{/*          <div className="w-full lg:w-1/2 animate__animated animate__fadeInDown animate__delay-0.1s px-4 lg:px-0 mb-8 lg:mb-0 mt-4"> */}
          <div className="w-full lg:w-1/2 mt-20 animate__animated animate__fadeInDown animate__delay-0.1s px-4 lg:px-0 mb-8 lg:mb-0">
-
             <div className="gradient-border">
               <div className="code-window bg-[#091121] overflow-x-auto text-sm rounded-lg">
                 <div className="window-header">
@@ -208,6 +206,26 @@ export default function Hero() {
             </div>
           </div>
           </div>
+
+        {/* Mobile version - visible below lg */}
+<div className="block lg:hidden w-full mt-10 px-4 mb-8">
+  <div className="gradient-border">
+    <div className="code-window bg-[#091121] overflow-x-auto text-xs rounded-lg">
+      <div className="window-header flex items-center">
+        <div className="window-dot bg-red-500"></div>
+        <div className="window-dot bg-yellow-500"></div>
+        <div className="window-dot bg-green-500"></div>
+        <span className="ml-2 text-xs text-gray-400 flex items-center gap-2">
+          <i className="fas fa-code"></i>
+          about.py
+        </span>
+      </div>
+      <pre className="language-javascript p-3 min-w-full">
+        <code className="language-javascript">{code}</code>
+      </pre>
+    </div>
+  </div>
+</div>
         </section>
 
         {/* Scroll indicator */}
