@@ -11,16 +11,15 @@ export default function Projects1() {
     offset: ["start start", "end end"],
   });
 
-   
 return (
-  <ReactLenis root>
-    <main className="bg-black" ref={container}>
-      <section className="text-white w-full bg-slate-950">
-        {projects.map((project, i) => {
-          const targetScale = 1 - (projects.length - i) * 0.05;
-          return (
-            <React.Fragment key={`p_${i}`}>
+    <ReactLenis root>
+      <main className="bg-black" ref={container}>
+        <section className="text-white w-full bg-slate-950">
+          {projects.map((project, i) => {
+            const targetScale = 1 - (projects.length - i) * 0.05;
+            return (
               <Card
+                key={`p_${i}`}
                 i={i}
                 url={project.link}
                 src={project.src}
@@ -31,19 +30,14 @@ return (
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
               />
-              {i === 0 && (
-                <div className="lg:hidden flex justify-center py-6 animate-bounce text-sm text-gray-400">
-                  Scroll for more projects ↓
-                </div>
-              )}
-            </React.Fragment>
-          );
-        })}
-      </section>
-    </main>
-  </ReactLenis>
-);
+            );
+          })}
+        </section>
+      </main>
+    </ReactLenis>
+  );
 }
+
 function Card({
   i,
   title,
