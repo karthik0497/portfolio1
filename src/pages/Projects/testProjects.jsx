@@ -12,7 +12,7 @@ export default function Projects1() {
   });
 
    
-  return (
+ return (
     <ReactLenis root>
       <main className="bg-black" ref={container}>
         <section className="text-white w-full bg-slate-950">
@@ -30,11 +30,6 @@ export default function Projects1() {
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
-                 {i === 0 && (
-        <div className="lg:hidden flex flex-col items-center justify-center py-8 animate-bounce">
-          <span className="text-gray-400 text-sm mb-2">Scroll for more projects</span>
-        </div>
-      )}
               />
             );
           })}
@@ -43,7 +38,6 @@ export default function Projects1() {
     </ReactLenis>
   );
 }
-
 function Card({
   i,
   title,
