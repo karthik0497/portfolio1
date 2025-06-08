@@ -6,7 +6,7 @@ import Meteors from "@/components/ui/meteors";
 
 import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
-import {greet,intro,bio,role,titles,skills,highlight_words_1,highlight_words_2,highlight_words_3,linkedin_profile,drive_link} from "@/pages/variables/varibles.js";
+import {greet,intro,bio,role,titles,skills,highlight_words_1,highlight_words_2,highlight_words_3,linkedin_profile,drive_link,skills1} from "@/pages/variables/varibles.js";
 
 // Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
@@ -45,7 +45,7 @@ export default function Hero() {
   
 
   const [code] = useState(skills);
-  const [code1] = useState(skills);
+  const [code1] = useState(skills1);
 
   useEffect(() => {
     Prism.highlightAll();
