@@ -109,7 +109,7 @@ export const highlight_words_2 = "adaptability"
 export const highlight_words_3 = "Innovation"
 
 export const linkedin_profile = "https://www.linkedin.com/in/Karthik04/"
-export const drive_link = "https://drive.google.com/file/d/1zR0fEmcMHSUw_NYZBTUiyYEZOnjOKHS1/view?usp=drive_link"
+export const drive_link = "https://drive.google.com/file/d/1e4w4JSySjZf6hnp4fcaXap06V5xKdMWZ/view?usp=sharing"
 
 export const location = "Bengaluru, India"
 export const email = "Karthik042412@gmail.com"
