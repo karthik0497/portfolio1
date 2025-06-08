@@ -186,9 +186,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right column - Code window */}
+           {/* Right column - Code window */}
          <div className="w-full lg:w-1/2 mt-20 animate__animated animate__fadeInDown animate__delay-0.1s px-4 lg:px-0 mb-8 lg:mb-0">
-            <div className="gradient-border">
+            <div className="gradient-border hidden lg:block">
               <div className="code-window bg-[#091121] overflow-x-auto text-sm rounded-lg">
                 <div className="window-header">
                   <div className="window-dot bg-red-500"></div>
@@ -204,10 +204,15 @@ export default function Hero() {
                 </pre>
               </div>
             </div>
+            {/* Mobile view - just the content */}
+            <div className="lg:hidden">
+              <pre className="language-javascript p-4 overflow-x-auto">
+                <code className="language-javascript">{code}</code>
+              </pre>
+            </div>
           </div>
           </div>
         </section>
-
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
           <span className="text-gray-400 text-sm flex items-center gap-2">
