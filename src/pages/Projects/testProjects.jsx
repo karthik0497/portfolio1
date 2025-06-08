@@ -11,30 +11,33 @@ export default function Projects1() {
     offset: ["start start", "end end"],
   });
 
-    return (
-    <div key={`p_${i}`}>
-      {/* Card Component */}
-      <Card
-        i={i}
-        url={project.link}
-        src={project.src}
-        title={project.title}
-        color={project.color}
-        description={project.description}
-        progress={scrollYProgress}
-        range={[i * 0.25, 1]}
-        targetScale={targetScale}
-      />
-
-      {/* Scroll Prompt for First Card */}
-      {i === 0 && (
-        <div className="lg:hidden flex flex-col items-center justify-center py-8 animate-bounce">
-          <span className="text-gray-400 text-sm mb-2">Scroll for more projects</span>
-        </div>
-      )}
-    </div>
+   
+  return (
+    <ReactLenis root>
+      <main className="bg-black" ref={container}>
+        <section className="text-white w-full bg-slate-950">
+          {projects.map((project, i) => {
+            const targetScale = 1 - (projects.length - i) * 0.05;
+            return (
+              <Card
+                key={`p_${i}`}
+                i={i}
+                url={project.link}
+                src={project.src}
+                title={project.title}
+                color={project.color}
+                description={project.description}
+                progress={scrollYProgress}
+                range={[i * 0.25, 1]}
+                targetScale={targetScale}
+              />
+            );
+          })}
+        </section>
+      </main>
+    </ReactLenis>
   );
-})}
+}
 
 function Card({
   i,
