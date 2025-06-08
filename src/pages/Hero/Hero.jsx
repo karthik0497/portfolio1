@@ -194,7 +194,7 @@ export default function Hero() {
                   <div className="window-dot bg-red-500"></div>
                   <div className="window-dot bg-yellow-500"></div>
                   <div className="window-dot bg-green-500"></div>
-                  <span className="ml-2 text-sm text-gray-400 flex items-center gap-2">
+                 <span className="ml-2 text-sm text-gray-400 flex items-center gap-2">
                     <i className="fas fa-code"></i>
                     about.py
                   </span>
