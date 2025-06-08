@@ -45,6 +45,7 @@ export default function Hero() {
   
 
   const [code] = useState(skills);
+  const [code1] = useState(skills);
 
   useEffect(() => {
     Prism.highlightAll();
@@ -207,7 +208,7 @@ export default function Hero() {
             {/* Mobile view - just the content */}
             <div className="lg:hidden">
               <pre className="language-javascript p-4 overflow-x-auto">
-                <code className="language-javascript">{code}</code>
+                <code className="language-javascript">{code1}</code>
               </pre>
             </div>
           </div>
