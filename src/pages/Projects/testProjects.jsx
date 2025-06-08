@@ -18,39 +18,23 @@ export default function Projects1() {
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (
-              <div key={`p_${i}`}>
-                <Card
-                  i={i}
-                  url={project.url}
-                  src={project.src}
-                  title={project.title}
-                  color={project.color}
-                  description={project.description}
-                  progress={scrollYProgress}
-                  range={[i * 0.25, 1]}
-                  targetScale={targetScale}
-                />
-                {/* Scroll indicator for mobile - only show after first project */}
+              <Card
+                key={`p_${i}`}
+                i={i}
+                url={project.link}
+                src={project.src}
+                title={project.title}
+                color={project.color}
+                description={project.description}
+                progress={scrollYProgress}
+                range={[i * 0.25, 1]}
+                targetScale={targetScale}
                 {i === 0 && (
                   <div className="lg:hidden flex flex-col items-center justify-center py-8 animate-bounce">
                     <span className="text-gray-400 text-sm mb-2">Scroll for more projects</span>
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="text-gray-400"
-                    >
-                      <path d="M12 5v14M5 12l7 7 7-7"/>
-                    </svg>
                   </div>
                 )}
-              </div>
+              />
             );
           })}
         </section>
@@ -58,7 +42,6 @@ export default function Projects1() {
     </ReactLenis>
   );
 }
-
 
 function Card({
   i,
