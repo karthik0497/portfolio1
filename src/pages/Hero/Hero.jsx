@@ -6,7 +6,7 @@ import Meteors from "@/components/ui/meteors";
 
 import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
-import { greet, intro, bio, role, titles, skills, highlight_words_1, highlight_words_2, highlight_words_3, linkedin_profile, github_profile, python_resume, robotics_resume, skills1 } from "@/pages/variables/varibles.js";
+import { greet, intro, bio, role, titles, skills, skillsMobile, highlight_words_1, highlight_words_2, highlight_words_3, linkedin_profile, github_profile, python_resume, robotics_resume } from "@/pages/variables/varibles.js";
 
 // Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
@@ -43,7 +43,7 @@ const GridBackground = () => {
 
 export default function Hero() {
   const [code] = useState(skills);
-  const [code1] = useState(skills1);
+  const [codeMobile] = useState(skillsMobile);
 
   useEffect(() => {
     Prism.highlightAll();
@@ -128,13 +128,14 @@ export default function Hero() {
             </div>
 
             <div className="p-0 overflow-x-auto">
-              {/* Desktop View */}
+              {/* Desktop View - Full Code */}
               <pre className="language-python !bg-transparent !m-0 !p-4 hidden lg:block text-sm !text-slate-800">
                 <code className="language-python !text-slate-800">{code}</code>
               </pre>
-              {/* Mobile View */}
-              <pre className="language-python !bg-transparent !m-0 !p-4 lg:hidden text-xs !text-slate-800">
-                <code className="language-python !text-slate-800">{code1}</code>
+
+              {/* Mobile View - Optimized Code */}
+              <pre className="language-python !bg-transparent !m-0 !p-4 lg:hidden text-xs !text-slate-800 whitespace-pre-wrap">
+                <code className="language-python !text-slate-800">{codeMobile}</code>
               </pre>
             </div>
           </div>

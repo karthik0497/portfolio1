@@ -47,6 +47,37 @@ export const skills = `class Profile:
         }`;
 
 
+export const skillsMobile = `class Profile:
+  def __init__(self):
+    self.name = "Karthik B"
+    self.role = "Python Backend & Robotics"
+    self.learning = True
+    self.skills = {
+      "Backend": [
+        "Python", "FastAPI",
+        "Django", "PostgreSQL",
+        "REST API", "SQL"
+      ],
+      "Robotics": [
+        "ROS2", "PyPLC",
+        "Modbus (RS485)",
+        "ASRS / SCARA",
+        "Automation"
+      ],
+      "DevOps": [
+        "Docker", "Linux",
+        "AWS (EC2)", "Nginx",
+        "MQTT", "RabbitMQ",
+        "Prometheus/Grafana"
+      ],
+      "Tools": [
+        "Git", "GitHub", "SSH",
+        "Postman", "Linux CLI",
+        "HTML5", "CSS3"
+      ]
+    }`;
+
+
 export const skills1 = `class Profile:
 def __init__(self):
     self.name = "Karthik B"
