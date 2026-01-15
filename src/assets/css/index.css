@@ -120,30 +120,27 @@
 }
 
 /* Enhanced Prism.js styling */
+/* Custom overrides for visibility and clarity */
+.token.builtin {
+  color: #d19a66 !important; /* Orange/Brown for self */
+  font-weight: bold !important;
+}
+.token.class-name {
+  color: #c18401 !important; /* Gold/Yellow for class names */
+}
 pre[class*="language-"] {
-  background: #091121 !important;
-  padding: 1.5rem !important;
-  margin: 0 !important;
-  font-size: 0.95rem !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  font-weight: 500 !important; /* Slightly bolder for clarity */
 }
 
-.token.comment {
-  color: #8b9cb3 !important;
-  font-style: italic;
-}
-
-.token.string {
-  color: #a5d6ff !important;
-}
-
-.token.keyword {
-  color: #ff79c6 !important;
-}
-
-.token.function {
-  color: #66e7ff !important;
-}
-
+/* Base tailwind layers */
 @layer base {
   :root {
     --background: 0 0% 100%;

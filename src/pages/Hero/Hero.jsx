@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
-import "prismjs/components/prism-javascript";
-import "@/assets/css/tomorrow.css";
+import "prismjs/components/prism-python";
+import "prism-themes/themes/prism-one-light.css";
 import Meteors from "@/components/ui/meteors";
 
 import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
-import {greet,intro,bio,role,titles,skills,highlight_words_1,highlight_words_2,highlight_words_3,linkedin_profile,drive_link,skills1} from "@/pages/variables/varibles.js";
+import { greet, intro, bio, role, titles, skills, highlight_words_1, highlight_words_2, highlight_words_3, linkedin_profile, python_resume, robotics_resume, skills1 } from "@/pages/variables/varibles.js";
 
 // Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
@@ -42,187 +42,97 @@ const GridBackground = () => {
 };
 
 export default function Hero() {
-  
-
   const [code] = useState(skills);
   const [code1] = useState(skills1);
 
   useEffect(() => {
     Prism.highlightAll();
-
-    // Add CSS animation for grid and dots
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes gridPulse {
-        0%, 100% { opacity: 0.1; }
-        50% { opacity: 0.3; }
-      }
-      
-      @keyframes dotPulse {
-        0%, 100% { opacity: 0.2; transform: scale(0.8); }
-        50% { opacity: 0.5; transform: scale(1.2); }
-      }
-    `;
-    document.head.appendChild(style);
-
-    return () => {
-      document.head.removeChild(style);
-    };
   }, [code]);
 
   return (
-    <>
-      <main className="pt-20 lg:pt-[0rem] bg-[#020617] text-white min-h-screen">
-        <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0"></div>
+    <main className="min-h-screen bg-slate-50 text-slate-900 flex items-center relative overflow-hidden pt-20 lg:pt-0">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row items-center justify-between relative z-10">
 
-          {/* Choose one of these background options */}
-          <GridBackground />
-
-          {/* Or keep the original backgrounds if you prefer */}
-          {/* <HexagonBackground /> */}
-          {/* <AnimatedGrid /> */}
-          {/* <DotBackground /> */}
-
-          {/* Meteors Effect */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Meteors number={10} />
+        {/* Left column - Text content */}
+        <div className="w-full lg:w-1/2 mb-12 lg:mb-0">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 mb-6">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span className="text-blue-700 text-sm font-medium">Welcome to my Portfolio</span>
           </div>
 
-          {/* Main content container */}
-          <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 py-12 lg:py-0">
-            {/* Left column - Text content */}
-            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative">
-              {/* Decorative blurs */}
-              <div className="absolute hidden lg:-top-20 lg:-left-20 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-              <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
+          <h1 className="text-5xl sm:text-7xl font-bold leading-tight mb-6 text-slate-900">
+            Hello, I'm <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">
+              {intro}
+            </span>
+          </h1>
 
-              {/* Welcome badge */}
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
-                <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-                <span className="text-gray-300 text-xs sm:text-sm font-medium">
-                  Welcome to my Portfolio
-                </span>
-              </div>
+          <div className="text-xl sm:text-2xl text-slate-600 mb-8 font-light">
+            <FlipWords words={titles} className="text-slate-800 font-medium" />
+          </div>
 
-              {/* Name section */}
-              <div className="relative mb-6 sm:mb-8">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
-                  <SparklesText text="Hello" />
-                  <span className="relative inline-block">
-                    {greet}
-                    <span className="typing-effect gradient-text">
-                      {" "}
-                      {intro}
-                    </span>
-                  </span>
-                </h1>
-                <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div>
-              </div>
+          <p className="text-slate-600 text-lg leading-relaxed max-w-xl mb-10">
+            {bio}
+          </p>
 
-              {/* Role badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
-                <i className="fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base"></i>
-                <span>
-                  <FlipWords
-                    className={"text-lg sm:text-xl text-blue-400 font-medium"}
-                    words={titles}
-                  />
-                </span>
-              </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href={linkedin_profile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+            >
+              LinkedIn
+            </a>
 
-              {/* Description */}
-              <div className="relative mb-8 sm:mb-12 max-w-xl">
-                <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
-                  {bio}
-                </p>
-              </div>
+            <a
+              href={python_resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium transition-all duration-300 shadow-sm hover:shadow-md flex items-center gap-2"
+            >
+              <span>Python Resume</span>
+            </a>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s">
-                {/* View Projects Button */}
-                <a
-                  href={linkedin_profile}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
-                >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
-                    <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <span>LinkedIn</span>
-                      <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
-                    </span>
-                  </span>
-                </a>
+            <a
+              href={robotics_resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium transition-all duration-300 shadow-sm hover:shadow-md flex items-center gap-2"
+            >
+              <span>Robotics Resume</span>
+            </a>
+          </div>
+        </div>
 
-                {/* Contact Button */}
-                <a
-                  href={drive_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
-                >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
-                    <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
-                      <span>Resume</span>
-                      <i className="fas fa-envelope transform transition-all duration-300 group-hover:rotate-12"></i>
-                    </span>
-                  </span>
-                </a>
-              </div>
-              <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
-                <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
-                  <i className="fas fa-wand-magic-sparkles"></i>&nbsp;&nbsp;{highlight_words_1}
-                </div>
-              </div>
-              <div className="hidden lg:block absolute right-10 top-20 animate-float">
-                <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
-                  <i className="fas fa-code"></i>&nbsp;&nbsp;{highlight_words_2}
-                </div>
-              </div>
-              <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
-                <div className="px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400">
-                  <i className="fas fa-lightbulb"></i>&nbsp;&nbsp;{highlight_words_3}
-                </div>
-              </div>
+        {/* Right column - Code Code */}
+        <div className="w-full lg:w-1/2 lg:pl-10">
+          <div className="rounded-xl overflow-hidden bg-white border border-slate-200 shadow-2xl relative">
+            <div className="flex items-center gap-2 px-4 py-3 bg-slate-50 border-b border-slate-200">
+              <div className="w-3 h-3 rounded-full bg-red-400"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+              <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              <span className="ml-2 text-xs text-slate-500 font-medium">about.py</span>
             </div>
 
-           {/* Right column - Code window */}
-         <div className="w-full lg:w-1/2 mt-20 animate__animated animate__fadeInDown animate__delay-0.1s px-4 lg:px-0 mb-8 lg:mb-0">
-            <div className="gradient-border hidden lg:block">
-              <div className="code-window bg-[#091121] overflow-x-auto text-sm rounded-lg">
-                <div className="window-header">
-                  <div className="window-dot bg-red-500"></div>
-                  <div className="window-dot bg-yellow-500"></div>
-                  <div className="window-dot bg-green-500"></div>
-                 <span className="ml-2 text-sm text-gray-400 flex items-center gap-2">
-                    <i className="fas fa-code"></i>
-                    about.py
-                  </span>
-                </div>
-                <pre className="language-javascript p-4 min-w-full">
-                  <code className="language-javascript">{code}</code>
-                </pre>
-              </div>
-            </div>
-            {/* Mobile view - just the content */}
-            <div className="lg:hidden">
-              <pre className="language-javascript p-4 overflow-x-auto">
-                <code className="language-javascript">{code1}</code>
+            <div className="p-0 overflow-x-auto">
+              {/* Desktop View */}
+              <pre className="language-python !bg-transparent !m-0 !p-4 hidden lg:block text-sm !text-slate-800">
+                <code className="language-python !text-slate-800">{code}</code>
+              </pre>
+              {/* Mobile View */}
+              <pre className="language-python !bg-transparent !m-0 !p-4 lg:hidden text-xs !text-slate-800">
+                <code className="language-python !text-slate-800">{code1}</code>
               </pre>
             </div>
           </div>
-          </div>
-        </section>
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
-          <span className="text-gray-400 text-sm flex items-center gap-2">
-            <i className="fas fa-mouse text-blue-400"></i>
-            
-          </span>
-          <i className="fas fa-chevron-down text-blue-400 text-xl"></i>
         </div>
-      </main>
-    </>
+      </div>
+
+      {/* Absolute simplified decorations */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl -z-10"></div>
+    </main>
   );
 }
+
