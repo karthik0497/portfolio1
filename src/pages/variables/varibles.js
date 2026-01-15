@@ -64,6 +64,7 @@ export const highlight_words_2 = "Automation"
 export const highlight_words_3 = "Reliability"
 
 export const linkedin_profile = "https://linkedin.com/in/karthik04"
+export const github_profile = "https://github.com/karthik0497"
 export const python_resume = pythonResumePdf;
 export const robotics_resume = roboticsResumePdf;
 

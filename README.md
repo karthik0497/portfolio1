@@ -1,6 +1,8 @@
 # Karthik B - Portfolio
 
 ## 🚀 Overview
+**Live Demo:** [https://karthiktechie.vercel.app/](https://karthiktechie.vercel.app/)
+
 Welcome to my personal portfolio! This is a modern, responsive Single Page Application (SPA) designed to showcase my journey as a **Python Backend & Robotics Engineer**. 
 
 It highlights my expertise in building scalable backend systems, industrial automation, and robotics software using **Python, ROS2, and IoT technologies**.

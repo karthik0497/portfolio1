@@ -1,6 +1,6 @@
 import React from "react";
 import { Send, Phone, MapPin, Mail } from "lucide-react";
-import { email, location, get_in_touch, phone, linkedin_profile } from "@/pages/variables/varibles.js";
+import { email, location, get_in_touch, phone, linkedin_profile, github_profile } from "@/pages/variables/varibles.js";
 
 
 export default function Contact() {
